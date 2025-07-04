@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="result"></div>
+  <script type="module">
+    import SpeedTest from './speedtest.js';
+    const engine = new SpeedTest({ autoStart: true });
+    engine.onFinish = results => {
+      document.getElementById('result').textContent = JSON.stringify(results.getSummary(), null, 2);
+    };
+  </script>
+</body>
+</html>
